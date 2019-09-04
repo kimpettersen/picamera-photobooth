@@ -10,8 +10,8 @@ import os
 class Photobooth:
     def __init__(self):
 	self.picture_count = 1
-	self.event_name = "brollop"
-	self.base_path  = "/home/pi/photobooth/" + self.event_name
+	self.event_name = "outgoing"
+        self.base_path  = "/home/pi/photobooth/google-photos-uploader/" + self.event_name
 	self.assert_path_exist()	
 	self.width = 1280
 	self.height = 720
@@ -39,7 +39,8 @@ class Photobooth:
     def start(self):
 	preview = self.camera.start_preview()
 	while True:
-	    self.start_button_listener()
+	    #self.start_button_listener()
+	    sleep(10)
 	    for i in range(self.picture_count):
 		photobooth.start_countdown()
 		photobooth.capture()
@@ -93,18 +94,15 @@ if __name__ == "__main__":
 """
 TODO
 
-fullscreen - need the actual screen
-mutliple pictures - DONE 
-visual feedback -  
-multiple clicks
-upload
-display images
+- Fullscreen - need the actual screen
+- Mutliple pictures - DONE 
+- Visual feedback - DONE
+- Make sure you can`t start multiple sessions at once - DONE
+- Upload somewhere
+- Display images on secondary screen
 
-Nice to have QR register
-
-
-
-
+Nice to have 
+- QR register
 """
 
 
