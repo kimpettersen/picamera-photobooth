@@ -40,10 +40,13 @@ class Photobooth:
 	preview = self.camera.start_preview()
 	while True:
 	    #self.start_button_listener()
-	    sleep(10)
+	    #sleep(10)
 	    for i in range(self.picture_count):
 		photobooth.start_countdown()
 		photobooth.capture()
+	    self.stop()
+    
+    def stop(self):
 	self.camera.stop_preview()
 	self.camera.close()
 	
@@ -56,6 +59,7 @@ class Photobooth:
 	sleep(.1)
 	self.camera.remove_overlay(o)
 	self.camera.capture(filename)
+	
 
     def start_button_listener(self):
 	while True:
