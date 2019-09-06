@@ -29,9 +29,10 @@ class Photobooth:
 	# https://picamera.readthedocs.io/en/release-1.10/fov.html
 	self.camera.resolution = (self.width, self.height)
 	self.camera.framerate = 15
-	self.camera.image_effect = 'denoise'
-	self.camera.brightness = 50
-
+	#self.camera.image_effect = 'denoise'
+	self.camera.awb_mode = "fluorescent"
+        self.camera.brightness = 55
+        
 	# TODO: consider using board for wider Pi support
 	# https://raspberrypi.stackexchange.com/questions/12966/what-is-the-difference-between-board-and-bcm-for-gpio-pin-numbering
 	GPIO.setmode(GPIO.BCM)
