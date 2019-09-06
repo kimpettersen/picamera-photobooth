@@ -13,9 +13,9 @@ import os
 class Photobooth:
     def __init__(self):
         self.picture_count = 1
-	self.event_name = "bryllup"
+	self.event_name = "fotokiosk"
 
-	self.base_path  = "/home/pi/photobooth/google-photos-uploader/" + self.event_name
+	self.base_path  = "/home/pi/photobooth/" + self.event_name
 	self.assert_path_exist()	
 	self.width = 1280
 	self.height = 960
